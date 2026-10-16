@@ -9,8 +9,13 @@ public class B_HashtagExtractor {
     public static void main(String[] args) {
         B_HashtagExtractor b = new B_HashtagExtractor();
     }
+
     public int hash;
     public String hash1;
+    public int hash3;
+    public int nextHash;
+    public String nextHash1;
+    public int nextHash3;
 
 
     public B_HashtagExtractor() {
@@ -23,12 +28,33 @@ public class B_HashtagExtractor {
     public void extractHashtags(String post) {
         /* TODO: your code goes here */
 
+        int y = 0;
+        int z =1;
+        while (y < post.length()) {
+            System.out.println("1:"+hash3);
+            hash = post.indexOf("#",hash3);
 
-      hash = post.indexOf("#");
-      hash1 = post.substring(hash);
-        System.out.println(hash1);
+            int x = 0;
 
+            while (x < post.length()) {
+                if (post.indexOf(x) == post.indexOf(" ")){
+                hash3 = post.indexOf(" ", hash);}
+                if (post.indexOf(x) == post.indexOf("!")){
+                    hash3 = post.indexOf("!", hash);}
+                if (post.indexOf(x) == post.indexOf(".")){
+                    hash3 = post.indexOf(".", hash);}
+                if (post.indexOf(x) == post.indexOf("?")){
+                    hash3 = post.indexOf("?", hash);}
+                x++;
+            }
+            hash1 = post.substring(hash, hash3);
+            System.out.println(hash3);
+            System.out.println("Hashtag: " + hash1);
+            y++;
+            z=hash3;
+
+
+        }
 
     }
-
 }
