@@ -11,23 +11,28 @@ public class A_NameFinder {
         A_NameFinder a = new A_NameFinder();
     }
     public String username;
+    public int username1;
 
     public A_NameFinder() {
         String email = "kim_possible25@milton.edu";
-        System.out.println("Username: " + findUsername(email)); // Output: Username: kim_possible25
+        System.out.println("Username: ");
+        System.out.println(findUsername(email));// Output: Username: kim_possible25
     }
 
     public String findUsername(String email) {
         /* TODO: your code goes here */
 
-        for (int x = 0; x< email.length();x++){
-            if (!email.equals("@")){
-
-
-
-            }
-
-        }
+        username1 = email.indexOf("@");
+        username = email.substring(0,username1);
+        System.out.println(username);
+//        for (int x = 0; x< email.length();x++){
+//            if (!email.equals("@")){
+//
+//
+//
+//            }
+//
+//        }
 
 
         return ""; // this is a temporary return to avoid errors
