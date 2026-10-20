@@ -15,7 +15,7 @@ public class C1_HiddenWordFinder {
 
 
     public C1_HiddenWordFinder() {
-        String sentence = "This is a test startHelloend string.";
+        String sentence = "Hello, hows it startgoingend with you?.";
         findHiddenWord(sentence);  // Output: Hidden word: Hello
     }
 
@@ -27,34 +27,48 @@ public class C1_HiddenWordFinder {
 // this works
         while (x < sentence.length()){
             char space1 = ' ';
-            System.out.println(sentence.charAt(x));
+            //System.out.println(sentence.charAt(x));
             if (sentence.charAt(x) == space1) {
 
-                System.out.println("yes");
+                // in this if statement
+            //    System.out.println("yes");
 
-                System.out.println(sentence.charAt(x));
-                System.out.println("x" + x);
+               //checking what the letter is
+                // System.out.println(sentence.charAt(x));
+                //more checking
+//                System.out.println("x" + x);
                 word = sentence.substring(x);
-                System.out.println("x;" + x);
-                System.out.println(word);
+//                System.out.println("x;" + x);
+//                System.out.println(word);
 // stops working
-                if (word.contains("start")) {
-
-                    word.substring(5);
+                if (word.startsWith(" start")) {
                     System.out.println(word);
-                    x++;
+                    System.out.println(word.length());
+                    System.out.println(sentence.length()-word.length());
+
+                    //final cut not really working
+                    word = word.substring(6,sentence.length() - word.length()-3);
+
+                    System.out.println(word);
+
+                    //it works
+                   // System.out.println("AHHHHH");
+                    break;
                 }
                 else {
-                    System.out.println("no1");
-                    System.out.println(x);
+                    //System.out.println("no1");
+                    //failure 1
+                    //System.out.println(x);
+                    // checking x - resolve?
                     x++;
                 }
+            } else {
+               // System.out.println("no2");
+                //error 2
+                //System.out.println(x);
+                //checking
+                x++;
             }
-//            else {
-//                System.out.println("no2");
-//                System.out.println(x);
-//                x++;
-//            }
         }
 
 
