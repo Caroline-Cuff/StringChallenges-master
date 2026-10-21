@@ -15,10 +15,12 @@ public class D_PasswordValidator {
         D_PasswordValidator d = new D_PasswordValidator();
     }
 
-    public boolean isValid;
+    public boolean isValidPassword;
+    public boolean isValidNumber;
+    public boolean isValidCapital;
 
     public D_PasswordValidator() {
-        String password = "mypassw0rd";
+        String password = "n0tapAssword";
         System.out.println("Valid password: " + isValidPassword(password));  // Output: Invalid password (false)
     }
 
@@ -26,41 +28,55 @@ public class D_PasswordValidator {
         /* TODO: your code goes here */
 
         if (password.equalsIgnoreCase("password")) {
-            isValid = false;
-            System.out.println("password" + isValid);
+            isValidPassword = false;
+           // System.out.println("password" + isValidPassword);
         } else {
-            int x = 0;
+            isValidPassword = true;
+             int x = 0;
             //number
-            while (x < password.length()) {
-                if (password.codePointAt(x) < 47 || password.codePointAt(x) > 59) {
-                    //  if(password.charAt(x) != 0 || password.charAt(x) !=1 || password.charAt(x) != 2 ||
-                    //          password.charAt(x) != 3 || password.charAt(x) != 4|| password.charAt(x) != 5
-                    //          || password.charAt(x) != 6 || password.charAt(x) != 7 || password.charAt(x) != 8
-                    //          || password.charAt(x) != 9){
-                    isValid = false;
-                    System.out.println("number" + isValid);
-                    x++;
-                }
-            }
+             while (x < password.length()) {
+               if (password.codePointAt(x) < 47 || password.codePointAt(x) > 59) {
+            //  if(password.charAt(x) != 0 || password.charAt(x) !=1 || password.charAt(x) != 2 ||
+            //          password.charAt(x) != 3 || password.charAt(x) != 4|| password.charAt(x) != 5
+            //          || password.charAt(x) != 6 || password.charAt(x) != 7 || password.charAt(x) != 8
+            //          || password.charAt(x) != 9){
+              isValidNumber = false;
+            //  System.out.println("number" + isValid);
+              x++;
+                 }
+               else{
+                   isValidNumber = true;
+               //    System.out.println("number" + isValidNumber);
+                   break;
+               }
+             }
 
             int y = 0;
             while (y < password.length()) {
                 if (password.codePointAt(y) < 65 || password.codePointAt(y) > 90) {
-                    isValid = true;
-                    System.out.println("uppercase" + isValid);
+                    isValidCapital = false;
+                //    System.out.println("uppercase" + isValid);
                     y++;
                 } else {
-                    isValid = false;
+                    isValidCapital = true;
+                //    System.out.println("Uppercase " + isValidCapital);
+                    break;
                 }
             }
 
 
             //upper case number
+
         }
-            return true; // this is a temporary return to avoid errors
+//            if (isValidPassword && isValidCapital && isValidNumber){
+//                System.out.println("Valid Password!");
+//            }
+//            else {
+//                System.out.println("Not a valid password.");
+//            }
+        return (isValidPassword && isValidCapital && isValidNumber);
 
+        }
     }
-}
-
 
 

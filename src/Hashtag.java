@@ -27,10 +27,10 @@ public class Hashtag {
         System.out.println(post);
 
 
-        System.out.println(post.indexOf("#"));
+        //  System.out.println(post.indexOf("#"));
         //cut down to the first #
         hashtag1 = post.substring(post.indexOf("#"));
-        System.out.println(hashtag1);
+       // System.out.println(hashtag1);
 
       //  int y = 0;
       //  while (y < post.length()) {
