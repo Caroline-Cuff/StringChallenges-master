@@ -15,7 +15,7 @@ public class C1_HiddenWordFinder {
 
 
     public C1_HiddenWordFinder() {
-        String sentence = "Hello, hows it startgoingend with you?.";
+        String sentence = "Hello, hows it startgoingsend with you?.";
         findHiddenWord(sentence);  // Output: Hidden word: Hello
     }
 

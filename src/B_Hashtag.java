@@ -41,20 +41,24 @@ public class B_Hashtag {
                 if (post.indexOf(x) == post.indexOf(" ")){
                     hash3 = post.indexOf(" ", hash);
                     System.out.println(hash3 + "space");
+                    x++;
                 }
                 if (post.indexOf(x) == post.indexOf("!")){
                     hash3 = post.indexOf("!", hash);
                     System.out.println(hash3 + "!");
+                    x++;
                 }
                 if (post.indexOf(x) == post.indexOf(".")){
                     hash3 = post.indexOf(".", hash);
                     System.out.println(hash3 + ".");
+                    x++;
                 }
                 if (post.indexOf(x) == post.indexOf("?")){
                     hash3 = post.indexOf("?", hash);
                     System.out.println(hash3 + "?");
+                    x++;
+
                 }
-                x++;
             }
            // hash1 = post.substring(hash, hash3);
             System.out.println(hash3);
