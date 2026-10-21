@@ -47,6 +47,7 @@ public class C1_HiddenWordFinder {
                     System.out.println(sentence.length()-word.length());
 
                     //final cut not really working
+                    System.out.println(":)" + (sentence.length()-word.length()));
                     word = word.substring(6,sentence.length() - word.length()-3);
 
                     System.out.println(word);
